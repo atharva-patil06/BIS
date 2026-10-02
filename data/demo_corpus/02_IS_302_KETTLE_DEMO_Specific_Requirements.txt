@@ -1,0 +1,47 @@
+SIMULATED / DEMO STANDARD — NOT OFFICIAL BIS TEXT
+IS 302-KETTLE (DEMO) — Household Electric Kettles — Specific Safety Requirements
+
+IMPORTANT NOTICE:
+This is simulated text created only for a prototype demonstration.
+It is NOT official BIS text, has not been verified against a BIS standard,
+and must not be presented as a real certification or compliance requirement.
+
+Clause 1 — Scope
+1.1 This simulated document provides example requirements for electric
+kettles intended for heating water in household use.
+
+Clause 4.1 — Rated Capacity
+4.1.1 The maximum recommended water capacity shall be permanently indicated
+on the kettle or in its operating instructions.
+
+Clause 5.2 — Water-Level Marking
+5.2.1 Minimum and maximum filling levels shall be clearly identifiable.
+
+Clause 6.1 — Lid and Opening
+6.1.1 The lid shall remain adequately retained during normal pouring.
+6.1.2 The design shall reduce the likelihood of accidental opening while
+the kettle is being handled.
+
+Clause 7.3 — Automatic Switching
+7.3.1 The kettle shall provide an automatic switching function intended to
+stop normal heating when the water reaches the end of the heating cycle.
+
+Clause 8.2 — Dry-Boil Protection
+8.2.1 A simulated protective function shall reduce continued heating when
+the kettle is operated with insufficient water.
+
+Clause 9.1 — Handle
+9.1.1 The handle shall permit normal handling without requiring contact with
+hot accessible surfaces.
+
+Clause 10.4 — Steam
+10.4.1 Steam discharge shall be directed so that normal operation does not
+unreasonably expose the user to hot steam.
+
+Clause 12.1 — Stability
+12.1.1 The kettle and its base shall remain stable during normal placement
+and removal.
+
+Clause 14.2 — Cleaning
+14.2.1 Instructions shall describe safe cleaning and shall warn against
+immersing electrical components where applicable.

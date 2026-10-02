@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BIS Sahayak (Demo Prototype)</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --border: #d8dce1;
+    --text: #1c2127;
+    --muted: #5b6472;
+    --accent: #1a5fb4;
+    --confident-bg: #eef6ec;
+    --confident-border: #4f9a5a;
+    --unconfident-bg: #fbeeee;
+    --unconfident-border: #c0392b;
+    --meets-bg: #eef6ec;
+    --notmeet-bg: #fbeeee;
+    --unclear-bg: #fdf6e3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  .demo-banner {
+    background: #fff3cd;
+    border-bottom: 1px solid #e0c46c;
+    color: #6b5300;
+    font-size: 13px;
+    padding: 8px 20px;
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    gap: 4px;
+    padding: 10px 20px 0;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  nav button {
+    border: none;
+    background: transparent;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+  }
+  nav button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .tab { display: none; }
+  .tab.active { display: block; }
+
+  /* Chat tab */
+  #messages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+    min-height: 200px;
+  }
+  .msg-row { display: flex; }
+  .msg-row.user { justify-content: flex-end; }
+  .msg-row.assistant { justify-content: flex-start; }
+  .bubble {
+    max-width: 85%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    white-space: pre-wrap;
+    line-height: 1.45;
+  }
+  .msg-row.user .bubble {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .bubble.confident {
+    background: var(--confident-bg);
+    border-color: var(--confident-border);
+    border-width: 2px;
+  }
+  .bubble.unconfident {
+    background: var(--unconfident-bg);
+    border-color: var(--unconfident-border);
+    border-width: 2px;
+  }
+  .citations {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .citation-chip {
+    display: inline-block;
+    background: var(--confident-border);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .status-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .status-label.confident-label { color: var(--confident-border); }
+  .status-label.unconfident-label { color: var(--unconfident-border); }
+
+  .input-row {
+    display: flex;
+    gap: 8px;
+  }
+  input[type=text], textarea {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  button.send {
+    padding: 10px 18px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button.send:disabled { opacity: 0.6; cursor: default; }
+
+  /* Compliance tab */
+  textarea#productDesc {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  table.verdicts {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  table.verdicts th, table.verdicts td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.verdicts th {
+    background: #f0f1f3;
+  }
+  tr.verdict-does-not-meet td.verdict-cell { background: var(--notmeet-bg); font-weight: 700; color: var(--unconfident-border); }
+  tr.verdict-unclear td.verdict-cell { background: var(--unclear-bg); font-weight: 600; color: #7a5c00; }
+  tr.verdict-meets td.verdict-cell { background: var(--meets-bg); font-weight: 600; color: var(--confident-border); }
+
+  .disclaimer {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: #eef1f4;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .loading { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+
+<header><h1>BIS Sahayak — Demo Prototype</h1></header>
+<div class="demo-banner">
+  ⚠ DEMO DATA: All standards referenced here are simulated for this prototype. They are NOT official BIS documents.
+</div>
+
+<nav>
+  <button id="tabBtnChat" class="active" onclick="switchTab('chat')">Ask a Question</button>
+  <button id="tabBtnCompliance" onclick="switchTab('compliance')">Compliance Checker</button>
+</nav>
+
+<main>
+  <section id="tabChat" class="tab active">
+    <div id="messages"></div>
+    <div class="input-row">
+      <input type="text" id="questionInput" placeholder="Ask about the demo standards (e.g. 'What insulation test voltage is required?')" onkeydown="if(event.key==='Enter') sendQuestion()">
+      <button class="send" id="sendBtn" onclick="sendQuestion()">Send</button>
+    </div>
+  </section>
+
+  <section id="tabCompliance" class="tab">
+    <p>Paste a product description below to check it against the demo standards clause by clause.</p>
+    <textarea id="productDesc" placeholder="e.g. This is a budget electric kettle rated 220V, 1500W... it has no automatic shut-off and no dry-boil protection. Insulation tested to withstand 500V."></textarea>
+    <div>
+      <button class="send" id="checkBtn" onclick="runComplianceCheck()">Check Compliance</button>
+    </div>
+    <div id="complianceResult"></div>
+  </section>
+</main>
+
+<script>
+const API_BASE = window.location.origin;
+
+function switchTab(name) {
+  document.getElementById('tabChat').classList.toggle('active', name === 'chat');
+  document.getElementById('tabCompliance').classList.toggle('active', name === 'compliance');
+  document.getElementById('tabBtnChat').classList.toggle('active', name === 'chat');
+  document.getElementById('tabBtnCompliance').classList.toggle('active', name === 'compliance');
+}
+
+function el(tag, opts = {}, children = []) {
+  const node = document.createElement(tag);
+  Object.entries(opts).forEach(([k, v]) => {
+    if (k === 'class') node.className = v;
+    else if (k === 'text') node.textContent = v;
+    else node.setAttribute(k, v);
+  });
+  children.forEach(c => node.appendChild(c));
+  return node;
+}
+
+function appendMessage(role, content) {
+  const messages = document.getElementById('messages');
+  const row = el('div', { class: `msg-row ${role}` });
+  row.appendChild(content);
+  messages.appendChild(row);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function userBubble(text) {
+  return el('div', { class: 'bubble', text });
+}
+
+function assistantBubble(data) {
+  const bubble = el('div', { class: `bubble ${data.confident ? 'confident' : 'unconfident'}` });
+  const label = el('span', {
+    class: `status-label ${data.confident ? 'confident-label' : 'unconfident-label'}`,
+    text: data.confident ? 'Answer found in demo standards' : 'No matching standard found'
+  });
+  bubble.appendChild(label);
+  bubble.appendChild(el('div', { text: data.answer }));
+  if (data.confident && data.citations && data.citations.length) {
+    const chips = el('div', { class: 'citations' });
+    data.citations.forEach(c => {
+      chips.appendChild(el('span', { class: 'citation-chip', text: `${c.is_number}, Clause ${c.clause}` }));
+    });
+    bubble.appendChild(chips);
+  }
+  return bubble;
+}
+
+async function sendQuestion() {
+  const input = document.getElementById('questionInput');
+  const question = input.value.trim();
+  if (!question) return;
+  input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+
+  appendMessage('user', userBubble(question));
+  const loadingBubble = el('div', { class: 'bubble loading', text: 'Thinking…' });
+  appendMessage('assistant', loadingBubble);
+
+  try {
+    const res = await fetch(`${API_BASE}/query`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question })
+    });
+    const data = await res.json();
+    loadingBubble.replaceWith(assistantBubble(data));
+  } catch (err) {
+    loadingBubble.replaceWith(el('div', { class: 'bubble unconfident', text: 'Error contacting the server: ' + err }));
+  } finally {
+    document.getElementById('sendBtn').disabled = false;
+  }
+}
+
+const VERDICT_ORDER = { 'does not meet': 0, 'unclear': 1, 'meets': 2 };
+
+async function runComplianceCheck() {
+  const desc = document.getElementById('productDesc').value.trim();
+  if (!desc) return;
+  const resultDiv = document.getElementById('complianceResult');
+  document.getElementById('checkBtn').disabled = true;
+  resultDiv.innerHTML = '';
+  resultDiv.appendChild(el('p', { class: 'loading', text: 'Checking against demo standards…' }));
+
+  try {
+    const res = await fetch(`${API_BASE}/compliance-check`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ product_description: desc })
+    });
+    const data = await res.json();
+    resultDiv.innerHTML = '';
+
+    const verdicts = [...data.verdicts].sort((a, b) =>
+      (VERDICT_ORDER[a.verdict] ?? 3) - (VERDICT_ORDER[b.verdict] ?? 3)
+    );
+
+    const table = el('table', { class: 'verdicts' });
+    table.appendChild(el('tr', {}, [
+      el('th', { text: 'Standard' }),
+      el('th', { text: 'Clause' }),
+      el('th', { text: 'Verdict' }),
+      el('th', { text: 'Reasoning' }),
+    ]));
+    verdicts.forEach(v => {
+      const rowClass = 'verdict-' + v.verdict.replace(/ /g, '-');
+      table.appendChild(el('tr', { class: rowClass }, [
+        el('td', { text: v.is_number }),
+        el('td', { text: v.clause }),
+        el('td', { class: 'verdict-cell', text: v.verdict }),
+        el('td', { text: v.reasoning }),
+      ]));
+    });
+    resultDiv.appendChild(table);
+    resultDiv.appendChild(el('div', { class: 'disclaimer', text: data.disclaimer }));
+  } catch (err) {
+    resultDiv.innerHTML = '';
+    resultDiv.appendChild(el('div', { class: 'bubble unconfident', text: 'Error contacting the server: ' + err }));
+  } finally {
+    document.getElementById('checkBtn').disabled = false;
+  }
+}
+</script>
+
+</body>
+</html>

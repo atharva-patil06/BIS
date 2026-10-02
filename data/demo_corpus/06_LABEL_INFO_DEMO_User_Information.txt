@@ -1,0 +1,32 @@
+SIMULATED / DEMO REFERENCE — NOT OFFICIAL BIS TEXT
+LABEL-INFO (DEMO) — Marking, Instructions and User Information for Kettles
+
+IMPORTANT NOTICE:
+All clauses in this file are fictional demonstration data. This is NOT an
+official BIS publication and must not be presented as verified BIS wording.
+
+Clause 1 — Scope
+1.1 This simulated reference gives example user-information requirements
+for household electric kettles.
+
+Clause 3.1 — Rating Label
+3.1.1 The product label shall display the simulated rated voltage and power
+input in a location visible during ordinary inspection.
+
+Clause 4.2 — Manufacturer Information
+4.2.1 Manufacturer or responsible-brand information shall be provided on the
+appliance or its accompanying documentation.
+
+Clause 5.1 — Operating Instructions
+5.1.1 Instructions shall explain filling, switching on, pouring, and normal
+shutdown procedures.
+
+Clause 6.3 — Safety Warnings
+6.3.1 Instructions shall warn users about hot surfaces, hot water, and steam.
+
+Clause 7.1 — Maintenance
+7.1.1 Instructions shall provide basic cleaning and maintenance guidance.
+
+Clause 8.2 — Electrical Safety
+8.2.1 Users shall be instructed not to operate an appliance with visibly
+damaged electrical cords, plugs, or enclosures.

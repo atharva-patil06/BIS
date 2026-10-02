@@ -1,0 +1,44 @@
+SIMULATED / DEMO STANDARD — NOT OFFICIAL BIS TEXT
+IS 302-1 (DEMO) — Household Electrical Appliances — Safety — Part 1: General Requirements
+
+IMPORTANT NOTICE:
+This document is entirely simulated for prototype demonstration purposes.
+It is NOT an official Bureau of Indian Standards (BIS) document and must
+NOT be treated as verified BIS requirements.
+
+Clause 1 — Scope
+1.1 This simulated document gives example safety requirements for household
+electrical appliances used under normal domestic conditions.
+
+Clause 2 — Definitions
+2.1 "Appliance" means the electrical product being evaluated.
+2.2 "Accessible part" means a part that can reasonably be touched by a user.
+
+Clause 5.1 — Marking
+5.1.1 The appliance shall be marked with rated voltage, rated power input,
+and the manufacturer's name or trademark.
+
+Clause 7.2 — Insulation
+7.2.1 Live parts shall be inaccessible during normal use.
+7.2.2 Basic insulation shall withstand a simulated test voltage of 1250 V
+for Class I appliances.
+
+Clause 9.4 — Heating
+9.4.1 Temperature rise of accessible surfaces during normal operation shall
+not exceed 60 °C above ambient temperature.
+
+Clause 11.3 — Earthing
+11.3.1 Exposed conductive parts intended for protective connection shall
+provide a reliable protective-earthing path.
+
+Clause 13.2 — Power Connection
+13.2.1 The supply connection shall be secured so that normal handling does
+not place excessive mechanical stress on electrical connections.
+
+Clause 15.1 — Abnormal Operation
+15.1.1 The appliance shall be designed so that a foreseeable abnormal
+condition does not create an unreasonable risk of electric shock or fire.
+
+Clause 18.1 — Documentation
+18.1.1 Instructions shall include basic electrical ratings, operating
+precautions, and cleaning or maintenance guidance.

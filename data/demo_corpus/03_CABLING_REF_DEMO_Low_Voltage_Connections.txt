@@ -1,0 +1,39 @@
+SIMULATED / DEMO REFERENCE — NOT OFFICIAL BIS TEXT
+CABLING-REF (DEMO) — Household Appliance Low-Voltage Connections
+
+IMPORTANT NOTICE:
+This document is simulated reference material for a prototype demonstration.
+It is NOT an official BIS document, not a substitute for a wiring code, and
+must not be used as verified regulatory or certification guidance.
+
+Clause 1 — Purpose
+1.1 This reference provides fictional example clauses concerning internal
+low-voltage connections in household appliances.
+
+Clause 3.1 — Conductor Identification
+3.1.1 Conductors shall be identifiable during assembly and maintenance.
+3.1.2 Protective-earth conductors shall be distinguished from current-carrying
+conductors by an appropriate identification method.
+
+Clause 4.2 — Conductor Sizing
+4.2.1 The conductor cross-sectional area shall be selected according to the
+expected operating current and thermal conditions.
+4.2.2 Connections shall not be operated beyond their simulated rated current.
+
+Clause 5.1 — Terminal Connections
+5.1.1 Terminals shall securely retain conductors under normal vibration and
+handling.
+5.1.2 Stranded conductors shall be secured so that individual strands cannot
+cause an unintended short circuit.
+
+Clause 6.3 — Strain Relief
+6.3.1 Flexible supply cords shall include suitable strain relief where the
+cord enters the appliance enclosure.
+
+Clause 7.1 — Insulation Clearance
+7.1.1 Conductors shall be positioned to reduce the possibility of contact
+between live conductors and accessible conductive parts.
+
+Clause 8.4 — Connection Inspection
+8.4.1 Assembly inspection shall verify conductor routing, terminal security,
+and visible insulation condition before final enclosure closure.

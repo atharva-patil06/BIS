@@ -1,0 +1,34 @@
+SIMULATED / DEMO REFERENCE — NOT OFFICIAL BIS TEXT
+THERMAL-SAFE (DEMO) — Heating and Temperature-Control Guidance for Kettles
+
+IMPORTANT NOTICE:
+This is fictional demonstration content. It is NOT official BIS text and
+does not represent a verified requirement, test method, or certification rule.
+
+Clause 1 — Scope
+1.1 This simulated document covers example thermal-safety clauses for
+household electric kettles.
+
+Clause 4.1 — Heating Element
+4.1.1 The heating element shall be positioned to reduce unintended contact
+with accessible parts.
+
+Clause 5.2 — Temperature Control
+5.2.1 The appliance shall include a control strategy that limits heating
+under normal operating conditions.
+
+Clause 6.1 — Surface Temperature
+6.1.1 Accessible user-contact surfaces shall remain below the simulated
+temperature-rise limit specified by the applicable general requirements.
+
+Clause 7.3 — Thermal Cut-Off
+7.3.1 A thermal protection device may be used to interrupt heating when an
+abnormal temperature condition is detected.
+
+Clause 8.2 — Repeated Operation
+8.2.1 Repeated normal heating cycles shall not cause progressive degradation
+that creates an unreasonable simulated safety risk.
+
+Clause 9.1 — Cooling
+9.1.1 The appliance shall be designed so that heat can dissipate after the
+heating cycle without damaging normal-use components.

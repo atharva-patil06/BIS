@@ -1,0 +1,31 @@
+SIMULATED / DEMO REFERENCE — NOT OFFICIAL BIS TEXT
+WATER-RESIST (DEMO) — Water Contact, Sealing and Material Guidance for Kettles
+
+IMPORTANT NOTICE:
+This document is simulated solely for a prototype demonstration.
+It is NOT official BIS text and must not be interpreted as verified BIS
+material, legal guidance, or certification criteria.
+
+Clause 1 — Scope
+1.1 This fictional reference addresses example design considerations for
+kettles that routinely contact water.
+
+Clause 4.1 — Water-Contact Surfaces
+4.1.1 Surfaces intended for repeated water contact shall be suitable for
+their intended operating environment.
+
+Clause 5.2 — Sealing
+5.2.1 Seals and joints shall be arranged to reduce unintended water entry
+into electrical compartments.
+
+Clause 6.1 — Leakage
+6.1.1 The appliance shall be designed to reduce the likelihood that normal
+water handling results in contact between water and hazardous live parts.
+
+Clause 7.4 — Materials
+7.4.1 Materials used near heating components shall tolerate the simulated
+temperature and moisture conditions expected during normal use.
+
+Clause 9.2 — Inspection
+9.2.1 Inspection shall check visible seals, joints, and water-contact surfaces
+for damage before the appliance is placed into service.
